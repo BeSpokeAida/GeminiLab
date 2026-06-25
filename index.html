@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GeminiLab — BespokeAIDA</title>
+  <link rel="stylesheet" href="styles/tokens.css" />
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+
+  <!-- Educational Banner (dark navy) -->
+  <div class="edu-banner">
+    <div class="edu-banner__logo">
+      <img src="assets/aida-logo.png" alt="BespokeAIDA" />
+      <span class="edu-banner__brand">GeminiLab <span class="edu-banner__by">by BespokeAIDA</span></span>
+    </div>
+    <div class="edu-banner__info">
+      <span class="edu-banner__label">Simulatore didattico AI Act</span>
+      <span class="edu-banner__sub">Replica non commerciale dell'interfaccia Gemini per corsi di alfabetizzazione AI · non connesso a servizi reali</span>
+    </div>
+  </div>
+
+  <!-- App Shell -->
+  <div class="app" id="app">
+    <aside class="sidebar" id="sidebar"></aside>
+    <main class="main" id="main"></main>
+  </div>
+
+  <!-- Global overlay (modals) -->
+  <div class="overlay hidden" id="overlay">
+    <div class="modal-wrapper" id="modal-wrapper"></div>
+  </div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
