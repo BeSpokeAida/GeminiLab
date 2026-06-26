@@ -7,6 +7,8 @@ import { renderAll } from "./render.js";
 
 let state = structuredClone(initialState);
 
+const DEMO_TOAST = "Simulatore didattico — questa funzione non è disponibile nella demo.";
+
 function render() { renderAll(state); }
 
 /* ============================================================
@@ -160,10 +162,8 @@ function dispatch(action) {
       return;
 
     case "noop":
-      return;
-
     case "noop-label":
-      showToast(action.label || "Funzionalità non disponibile in questa demo");
+      showToast(action.label || DEMO_TOAST);
       return;
 
     default:
@@ -204,6 +204,8 @@ document.addEventListener("click", e => {
 
   const action = btn.dataset.action;
 
+  if (action === "noop" && btn.matches("input, textarea, select")) return;
+
   if (action === "copy-import-prompt") {
     asyncDispatch({ type: action });
     return;
@@ -217,7 +219,7 @@ document.addEventListener("click", e => {
     chatId:  btn.dataset.chatId,
     appId:   btn.dataset.appId,
     filter:  btn.dataset.filter,
-    label:   btn.dataset.label,
+    label:   btn.dataset.label || btn.getAttribute("title"),
   };
 
   dispatch(payload);
